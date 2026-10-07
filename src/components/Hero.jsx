@@ -14,6 +14,13 @@ export default function Hero() {
         <p className="text-white font-black text-[10px] md:text-xs uppercase mt-2 tracking-widest text-right">SYS.DEV.01</p>
       </div>
 
+      <div className="absolute left-4 md:left-12 top-1/3 flex flex-col gap-2 opacity-20">
+        <div className="w-2 h-2 bg-red-600"></div>
+        <div className="w-2 h-2 bg-red-600"></div>
+        <div className="w-2 h-2 bg-red-600"></div>
+        <div className="w-2 h-12 bg-white"></div>
+      </div>
+
       <div className="flex-grow flex flex-col justify-center px-6 lg:px-12 relative z-10 w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -26,20 +33,32 @@ export default function Hero() {
             Hello, I'm
           </p>
           
-          <div className="relative w-full">
-            <h1 className="text-[18vw] sm:text-[15vw] md:text-[12rem] font-black text-white uppercase tracking-tighter leading-[0.85] mb-8 relative z-10 w-full">
+          <div className="relative w-full flex justify-between items-center">
+            <h1 className="text-[18vw] sm:text-[15vw] md:text-[12rem] font-black text-white uppercase tracking-tighter leading-[0.85] mb-8 relative z-10">
               Artur<br />Kich
             </h1>
             
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-              className="absolute top-0 right-0 sm:right-12 md:right-24 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 border-2 md:border-4 border-red-600 rounded-full flex items-center justify-center text-red-600 text-[8px] sm:text-[10px] md:text-xs font-black uppercase tracking-widest bg-[#0a0a0a] z-20"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[400px] lg:w-[400px] lg:h-[500px] grayscale hover:grayscale-0 transition-all duration-700 z-20"
             >
-              <div className="text-center leading-none">
-                <span className="block mb-1">BUILD</span>
-                <span className="block mb-1 text-white">*</span>
-                <span className="block">SHIP</span>
+              <img
+                src="/foto-perfil.jpg"
+                alt="Artur Kich"
+                className="w-full h-full object-cover border-4 border-white"
+              />
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 border-2 border-red-600 rounded-full flex items-center justify-center bg-[#0a0a0a] z-30">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+                  className="text-red-600 text-[10px] font-black uppercase tracking-widest text-center leading-none"
+                >
+                  <span className="block mb-1">BUILD</span>
+                  <span className="block mb-1 text-white">*</span>
+                  <span className="block">SHIP</span>
+                </motion.div>
               </div>
             </motion.div>
           </div>

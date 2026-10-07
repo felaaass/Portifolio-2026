@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#0a0a0a] pt-20 flex flex-col justify-between border-b-8 border-white w-full overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] pt-24 pb-0 flex flex-col justify-between border-b-8 border-white w-full overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
-      <div className="absolute top-32 right-6 md:right-12 opacity-30 z-0">
+      <div className="absolute top-32 right-6 md:right-12 opacity-30 z-0 hidden sm:block">
         <div className="flex gap-1 h-12 md:h-16">
           {[...Array(20)].map((_, i) => (
             <div key={i} className={`bg-white ${i % 3 === 0 ? 'w-2' : i % 5 === 0 ? 'w-4' : 'w-1'}`}></div>
@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="w-2 h-12 bg-white"></div>
       </div>
 
-      <div className="flex-grow flex flex-col justify-center px-6 lg:px-12 relative z-10 w-full max-w-7xl mx-auto">
+      <div className="flex-grow flex flex-col justify-center px-6 lg:px-12 py-12 lg:py-0 relative z-10 w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,8 +33,8 @@ export default function Hero() {
             Hello, I'm
           </p>
           
-          <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-center gap-8 lg:gap-12">
-            <h1 className="text-[22vw] md:text-[12vw] lg:text-[12rem] font-black text-white uppercase tracking-tighter leading-[0.85] relative z-10 flex-1">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8 lg:gap-12">
+            <h1 className="text-[25vw] md:text-[12vw] lg:text-[12rem] font-black text-white uppercase tracking-tighter leading-[0.85] relative z-10 flex-1">
               Artur<br />Kich
             </h1>
             
@@ -42,7 +42,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="hidden md:flex relative w-[280px] h-[380px] lg:w-[380px] lg:h-[480px] grayscale hover:grayscale-0 transition-all duration-700 z-20 shrink-0"
+              className="relative w-[240px] h-[320px] md:w-[280px] md:h-[380px] lg:w-[380px] lg:h-[480px] grayscale hover:grayscale-0 transition-all duration-700 z-20 shrink-0 mx-auto md:mx-0 mt-8 md:mt-0"
             >
               <img
                 src="/foto-perfil.jpg"
@@ -63,7 +63,7 @@ export default function Hero() {
             </motion.div>
           </div>
           
-          <div className="flex flex-col sm:flex-row flex-wrap gap-8 md:gap-16 mt-12 lg:mt-16 border-t-4 border-white/20 pt-8 w-full max-w-4xl">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-6 md:gap-16 mt-16 md:mt-12 lg:mt-16 border-t-4 border-white/20 pt-8 w-full max-w-4xl pb-8 md:pb-0">
             <div className="flex-1">
               <p className="text-red-600 font-bold uppercase text-xs tracking-widest mb-2">Role</p>
               <p className="text-white font-black text-lg md:text-xl uppercase tracking-tight">Full Stack Software Engineer</p>
@@ -80,7 +80,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="bg-red-600 py-3 md:py-4 overflow-hidden border-t-8 border-white w-full relative z-20">
+      <div className="bg-red-600 py-3 md:py-4 overflow-hidden border-t-8 border-white w-full relative z-20 mt-auto">
         <motion.div
           className="flex whitespace-nowrap text-white font-black uppercase text-2xl md:text-4xl tracking-widest"
           animate={{ x: [0, -1000] }}
